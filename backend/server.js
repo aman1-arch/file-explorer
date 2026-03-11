@@ -12,8 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/nodes', require('./routes/nodes'));
-
+app.use('/api/nodes', require('./routes/nodeRoutes'));
 // Connect to MongoDB and start server
 mongoose
   .connect(MONGO_URI)
