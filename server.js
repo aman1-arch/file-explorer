@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = "mongodb+srv://itsdemon100_db_user:YOUR_PASSWORD@cluster0.toiqp3q.mongodb.net/file-explorer?retryWrites=true&w=majority";
+const MONGO_URI = "mongodb+srv://itsdemon100_db_user:abc123@cluster0.toiqp3q.mongodb.net/file-explorer?retryWrites=true&w=majority";
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -18,8 +18,9 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log('✅ Connected to MongoDB');
-    app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-  })
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});  })
   .catch((err) => {
     console.error('❌ MongoDB connection error:', err);
     process.exit(1);
