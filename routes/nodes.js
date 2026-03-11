@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Node = require('../backend/models/Node');
-
 // GET /api/nodes — root-level nodes
 router.get('/', async (req, res) => {
   try {
